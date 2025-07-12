@@ -1,0 +1,80 @@
+/* Add to Populer.css */
+
+.section-subtitle {
+    color: #6b7280;
+    font-size: 16px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.featured-item-card {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.item-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.swap-btn, .points-btn {
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}
+
+.swap-btn {
+    background-color: #10b981;
+    color: white;
+}
+
+.points-btn {
+    background-color: #f59e0b;
+    color: white;
+}
+
+.item-status {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.availability-badge, .condition-badge {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.availability-badge.available {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+.condition-badge {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
+.view-all-link {
+    text-decoration: none;
+}
+
+.view-all-btn {
+    background-color: #374151;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 6px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.view-all-btn:hover {
+    background-color: #1f2937;
+}
