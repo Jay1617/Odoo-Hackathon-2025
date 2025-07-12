@@ -28,6 +28,8 @@ const RecommendationChat = lazy(()=> import('./components/Chat/RecommendationCha
 import menBanner from "./components/Assets/banner_mens.png";
 import womenBanner from "./components/Assets/banner_women.png";
 import kidsBanner from "./components/Assets/banner_kids.png";
+import Sent from './components/Requests/Sent.jsx';
+import Received from './components/Requests/Received.jsx';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -52,6 +54,8 @@ const router = createBrowserRouter(
       <Route path="/admin" element={<ProtectedRoute element={AdminPage} />}>
         <Route path="add-product" element={<ProtectedRoute element={AddProductPage} />} />
         <Route path="all-products" element={<ProtectedRoute element={AllProductsPage} />} />
+        <Route path="sent" element={<ProtectedRoute element={Sent} />} />
+        <Route path="received" element={<ProtectedRoute element={Received} />} />
       </Route>
     </Route >
   )

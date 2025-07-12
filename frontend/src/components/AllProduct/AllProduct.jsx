@@ -3,6 +3,7 @@ import { lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
 import SearchBar from '../SearchBar/SearchBar';
 import { useGetDataQuery } from '../../store/cartSlice/';
+import { useSelector } from 'react-redux';
 
 const AllProductInd = lazy(() => import('./AllProductIndivisual'));
 
@@ -10,6 +11,7 @@ const AllProduct = () => {
     const [query, setQuery] = useState('');
     const [category, setCategory] = useState('men');
     const { data, isError, isLoading, refetch } = useGetDataQuery();
+    const user = useSelector(state => state.auth);
 
     const handleQueryChange = useCallback((newQuery) => {
         setQuery(newQuery);
@@ -18,10 +20,12 @@ const AllProduct = () => {
     const filteredProducts = useMemo(() => {
         if (!data?.products) return [];
         return data.products.filter(product =>
-            product.category === category &&
+            product.category === category && user?.userData?.data._id === product?.owner &&
             product.name.toLowerCase().includes(query.toLowerCase())
         );
     }, [data, category, query]);
+
+    console.log(filteredProducts);
 
     if (isError) {
         return <div>Something went wrong.</div>;

@@ -23,8 +23,14 @@ const SwapRequestSchema = new mongoose.Schema({
     },
     status: {
         type: String,
-        enum: ["pending", "cancelled", "success"],
-        default: "pending"
+        enum: ["pending", "cancelled", "success", "rejected"],
+        default: "pending",
+        required: true
+    },
+    purchase_type: {
+        type: String,
+        enum: ["via-point", "via_swap"],
+        required: true
     }
 }, { timestamps: true });
 

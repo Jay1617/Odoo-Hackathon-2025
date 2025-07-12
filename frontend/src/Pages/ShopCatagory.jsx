@@ -6,6 +6,7 @@ import Item from '../components/Item/Item';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
+import { useGetDataQuery } from '../store/cartSlice';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -43,6 +44,9 @@ const ShopCategory = (props) => {
 
   const [sortOption, setSortOption] = useState('bestsellers');
   const [dropdownVisible, setDropdownVisible] = useState(false);
+
+  const { data } = useGetDataQuery();
+  console.log("This is the data:",data);
 
   const sortByClickHandler = (option) => {
     setSortOption(option);
